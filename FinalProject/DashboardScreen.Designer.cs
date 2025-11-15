@@ -1,6 +1,6 @@
 ﻿namespace FinalProject
 {
-    partial class Dashboard
+    partial class DashboardScreen
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardScreen));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblNavbar = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();

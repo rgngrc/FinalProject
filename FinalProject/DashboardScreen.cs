@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FinalProject
 {
-    public partial class Dashboard : Form
+    public partial class DashboardScreen : Form
     {
-        public Dashboard()
+        public DashboardScreen()
         {
             InitializeComponent();
         }
