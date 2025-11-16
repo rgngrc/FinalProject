@@ -491,6 +491,7 @@
             this.btnScanHistory.TabIndex = 8;
             this.btnScanHistory.Text = "Scan History";
             this.btnScanHistory.UseVisualStyleBackColor = true;
+            this.btnScanHistory.Click += new System.EventHandler(this.btnScanHistory_Click);
             // 
             // btnSettings
             // 

@@ -12,13 +12,13 @@ using AForge.Video.DirectShow;
 
 namespace FinalProject
 {
-    public partial class ScanFrame : Form
+    public partial class ScanScreen : Form
     {
        
         FilterInfoCollection webcams;
         VideoCaptureDevice cam;
 
-        public ScanFrame()
+        public ScanScreen()
         {
             InitializeComponent();
         }
@@ -72,12 +72,19 @@ namespace FinalProject
 
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btnViewRecord_Click(object sender, EventArgs e)
+        {
+            StudentRecordFrame studentRecord = new StudentRecordFrame();
+            studentRecord.Show();
+            this.Close();
+        }
+
+        private void btnBackToDashboard_Click(object sender, EventArgs e)
         {
             DashboardScreen dashboard = new DashboardScreen();
             dashboard.Show();
-            this.Hide();
+            this.Close();
         }
     }
-}
+    }
 

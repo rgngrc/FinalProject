@@ -1,6 +1,6 @@
 ﻿namespace FinalProject
 {
-    partial class ScanFrame
+    partial class ScanScreen
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScanFrame));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScanScreen));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnBackToDashboard = new System.Windows.Forms.Button();
             this.Logout = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,14 +40,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnScanCode = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnViewRecord = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -66,7 +66,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(80)))));
-            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.btnBackToDashboard);
             this.panel1.Controls.Add(this.Logout);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.label3);
@@ -80,19 +80,19 @@
             this.panel1.Size = new System.Drawing.Size(1540, 94);
             this.panel1.TabIndex = 1;
             // 
-            // button4
+            // btnBackToDashboard
             // 
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(25, 21);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(69, 53);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "←";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnBackToDashboard.BackColor = System.Drawing.Color.Transparent;
+            this.btnBackToDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBackToDashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackToDashboard.ForeColor = System.Drawing.Color.White;
+            this.btnBackToDashboard.Location = new System.Drawing.Point(22, 19);
+            this.btnBackToDashboard.Name = "btnBackToDashboard";
+            this.btnBackToDashboard.Size = new System.Drawing.Size(69, 53);
+            this.btnBackToDashboard.TabIndex = 8;
+            this.btnBackToDashboard.Text = "←";
+            this.btnBackToDashboard.UseVisualStyleBackColor = false;
+            this.btnBackToDashboard.Click += new System.EventHandler(this.btnBackToDashboard_Click);
             // 
             // Logout
             // 
@@ -136,11 +136,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Cambria", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(940, 33);
+            this.label2.Location = new System.Drawing.Point(885, 30);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(170, 27);
+            this.label2.Size = new System.Drawing.Size(220, 33);
             this.label2.TabIndex = 4;
             this.label2.Text = "Roan University";
             // 
@@ -151,7 +151,7 @@
             this.pictureBox2.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.ErrorImage")));
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
-            this.pictureBox2.Location = new System.Drawing.Point(847, 11);
+            this.pictureBox2.Location = new System.Drawing.Point(815, 15);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(64, 63);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -163,11 +163,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(125, 32);
+            this.label1.Location = new System.Drawing.Point(120, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(178, 36);
+            this.label1.Size = new System.Drawing.Size(78, 36);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Scan Screen";
+            this.label1.Text = "Scan";
             // 
             // pictureBox1
             // 
@@ -182,7 +182,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.button2);
+            this.panel4.Controls.Add(this.btnScanCode);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.pictureBox1);
             this.panel4.Location = new System.Drawing.Point(89, 119);
@@ -190,18 +190,18 @@
             this.panel4.Size = new System.Drawing.Size(613, 479);
             this.panel4.TabIndex = 4;
             // 
-            // button2
+            // btnScanCode
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(184)))), ((int)(((byte)(67)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(259, 428);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(118, 37);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Scan Code";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnScanCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(184)))), ((int)(((byte)(67)))));
+            this.btnScanCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnScanCode.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnScanCode.ForeColor = System.Drawing.Color.White;
+            this.btnScanCode.Location = new System.Drawing.Point(468, 419);
+            this.btnScanCode.Name = "btnScanCode";
+            this.btnScanCode.Size = new System.Drawing.Size(132, 46);
+            this.btnScanCode.TabIndex = 7;
+            this.btnScanCode.Text = "Scan Code";
+            this.btnScanCode.UseVisualStyleBackColor = false;
             // 
             // panel5
             // 
@@ -218,7 +218,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Cambria", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(57, 22);
+            this.label4.Location = new System.Drawing.Point(23, 18);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(230, 26);
             this.label4.TabIndex = 7;
@@ -232,9 +232,9 @@
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox1.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(432, 21);
+            this.comboBox1.Location = new System.Drawing.Point(379, 16);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(133, 29);
+            this.comboBox1.Size = new System.Drawing.Size(211, 29);
             this.comboBox1.TabIndex = 0;
             // 
             // panel6
@@ -261,25 +261,26 @@
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.White;
-            this.panel8.Controls.Add(this.button3);
+            this.panel8.Controls.Add(this.btnViewRecord);
             this.panel8.Controls.Add(this.panel7);
             this.panel8.Location = new System.Drawing.Point(847, 119);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(613, 588);
             this.panel8.TabIndex = 8;
             // 
-            // button3
+            // btnViewRecord
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(184)))), ((int)(((byte)(67)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(464, 517);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(124, 44);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "View Record";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnViewRecord.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(184)))), ((int)(((byte)(67)))));
+            this.btnViewRecord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewRecord.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewRecord.ForeColor = System.Drawing.Color.White;
+            this.btnViewRecord.Location = new System.Drawing.Point(403, 511);
+            this.btnViewRecord.Name = "btnViewRecord";
+            this.btnViewRecord.Size = new System.Drawing.Size(169, 54);
+            this.btnViewRecord.TabIndex = 7;
+            this.btnViewRecord.Text = "View Record";
+            this.btnViewRecord.UseVisualStyleBackColor = false;
+            this.btnViewRecord.Click += new System.EventHandler(this.btnViewRecord_Click);
             // 
             // panel7
             // 
@@ -321,7 +322,7 @@
             this.label7.TabIndex = 7;
             this.label7.Text = "Scanned Data";
             // 
-            // ScanFrame
+            // ScanScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -332,7 +333,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel8);
-            this.Name = "ScanFrame";
+            this.Name = "ScanScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Scan Form";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -368,16 +369,16 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnScanCode;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnViewRecord;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnBackToDashboard;
     }
 }
 
