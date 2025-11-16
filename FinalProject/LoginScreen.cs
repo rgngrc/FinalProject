@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace FinalProject
 {
     public partial class LoginScreen : Form
@@ -46,6 +47,13 @@ namespace FinalProject
         private void lblWelcome_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            DashboardScreen dashboard = new DashboardScreen();
+            dashboard.Show();
+            this.Hide();
         }
     }
 }
