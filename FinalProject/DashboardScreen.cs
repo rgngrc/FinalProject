@@ -54,5 +54,12 @@ namespace FinalProject
         {
 
         }
+
+        private void btnScan_Click(object sender, EventArgs e)
+        {
+            ScanFrame scan = new ScanFrame();
+            scan.Show();
+            this.Hide();
+        }
     }
 }
