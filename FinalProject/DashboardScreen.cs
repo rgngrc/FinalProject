@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FinalProject
@@ -28,6 +21,36 @@ namespace FinalProject
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblRecentScans_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelRecentScans_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dgvRecentScans_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblTodayNum_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
