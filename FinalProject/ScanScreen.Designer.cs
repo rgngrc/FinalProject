@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScanScreen));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnBackToDashboard = new System.Windows.Forms.Button();
-            this.Logout = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -45,13 +45,18 @@
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.btnViewRecord = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
+            this.labelScanStatus = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.labelCourse = new System.Windows.Forms.Label();
+            this.labelSection = new System.Windows.Forms.Label();
+            this.pictureBoxStudent = new System.Windows.Forms.PictureBox();
+            this.labelStudentNumber = new System.Windows.Forms.Label();
+            this.labelStudentName = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -61,13 +66,14 @@
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStudent)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(80)))));
             this.panel1.Controls.Add(this.btnBackToDashboard);
-            this.panel1.Controls.Add(this.Logout);
+            this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.panel2);
@@ -94,17 +100,18 @@
             this.btnBackToDashboard.UseVisualStyleBackColor = false;
             this.btnBackToDashboard.Click += new System.EventHandler(this.btnBackToDashboard_Click);
             // 
-            // Logout
+            // btnLogout
             // 
-            this.Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Logout.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Logout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(177)))), ((int)(((byte)(122)))));
-            this.Logout.Location = new System.Drawing.Point(1363, 27);
-            this.Logout.Name = "Logout";
-            this.Logout.Size = new System.Drawing.Size(104, 37);
-            this.Logout.TabIndex = 2;
-            this.Logout.Text = "Logout";
-            this.Logout.UseVisualStyleBackColor = true;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(177)))), ((int)(((byte)(122)))));
+            this.btnLogout.Location = new System.Drawing.Point(1357, 24);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(137, 45);
+            this.btnLogout.TabIndex = 2;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // panel3
             // 
@@ -182,6 +189,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.textBox1);
             this.panel4.Controls.Add(this.btnScanCode);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.pictureBox1);
@@ -196,12 +204,13 @@
             this.btnScanCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnScanCode.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnScanCode.ForeColor = System.Drawing.Color.White;
-            this.btnScanCode.Location = new System.Drawing.Point(468, 419);
+            this.btnScanCode.Location = new System.Drawing.Point(449, 419);
             this.btnScanCode.Name = "btnScanCode";
             this.btnScanCode.Size = new System.Drawing.Size(132, 46);
             this.btnScanCode.TabIndex = 7;
             this.btnScanCode.Text = "Scan Code";
             this.btnScanCode.UseVisualStyleBackColor = false;
+            this.btnScanCode.Click += new System.EventHandler(this.btnScanCode_Click);
             // 
             // panel5
             // 
@@ -218,7 +227,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Cambria", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(23, 18);
+            this.label4.Location = new System.Drawing.Point(32, 18);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(230, 26);
             this.label4.TabIndex = 7;
@@ -230,33 +239,22 @@
             this.comboBox1.DisplayMember = "Select a Scanner";
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(379, 16);
+            this.comboBox1.Location = new System.Drawing.Point(338, 14);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(211, 29);
+            this.comboBox1.Size = new System.Drawing.Size(243, 36);
             this.comboBox1.TabIndex = 0;
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.White;
-            this.panel6.Controls.Add(this.label5);
+            this.panel6.Controls.Add(this.labelScanStatus);
             this.panel6.ForeColor = System.Drawing.Color.Cornsilk;
             this.panel6.Location = new System.Drawing.Point(89, 626);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(613, 81);
             this.panel6.TabIndex = 5;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(184)))), ((int)(((byte)(67)))));
-            this.label5.Location = new System.Drawing.Point(121, 31);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(367, 23);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Display here yung message succesfullly";
             // 
             // panel8
             // 
@@ -274,9 +272,9 @@
             this.btnViewRecord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewRecord.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnViewRecord.ForeColor = System.Drawing.Color.White;
-            this.btnViewRecord.Location = new System.Drawing.Point(403, 511);
+            this.btnViewRecord.Location = new System.Drawing.Point(403, 517);
             this.btnViewRecord.Name = "btnViewRecord";
-            this.btnViewRecord.Size = new System.Drawing.Size(169, 54);
+            this.btnViewRecord.Size = new System.Drawing.Size(169, 44);
             this.btnViewRecord.TabIndex = 7;
             this.btnViewRecord.Text = "View Record";
             this.btnViewRecord.UseVisualStyleBackColor = false;
@@ -285,22 +283,15 @@
             // panel7
             // 
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Controls.Add(this.label6);
+            this.panel7.Controls.Add(this.labelCourse);
+            this.panel7.Controls.Add(this.pictureBoxStudent);
+            this.panel7.Controls.Add(this.labelSection);
+            this.panel7.Controls.Add(this.labelStudentNumber);
+            this.panel7.Controls.Add(this.labelStudentName);
             this.panel7.Location = new System.Drawing.Point(44, 102);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(528, 390);
             this.panel7.TabIndex = 8;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(184)))), ((int)(((byte)(67)))));
-            this.label6.Location = new System.Drawing.Point(100, 140);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(274, 23);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Record ng student na na scan";
             // 
             // panel9
             // 
@@ -322,6 +313,85 @@
             this.label7.TabIndex = 7;
             this.label7.Text = "Scanned Data";
             // 
+            // labelScanStatus
+            // 
+            this.labelScanStatus.Font = new System.Drawing.Font("Cambria", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelScanStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(184)))), ((int)(((byte)(67)))));
+            this.labelScanStatus.Location = new System.Drawing.Point(87, 23);
+            this.labelScanStatus.Name = "labelScanStatus";
+            this.labelScanStatus.Size = new System.Drawing.Size(428, 33);
+            this.labelScanStatus.TabIndex = 1;
+            this.labelScanStatus.Text = "                                            ";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.White;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(37, 424);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(378, 36);
+            this.textBox1.TabIndex = 9;
+            // 
+            // labelCourse
+            // 
+            this.labelCourse.BackColor = System.Drawing.Color.Transparent;
+            this.labelCourse.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCourse.ForeColor = System.Drawing.Color.Black;
+            this.labelCourse.Location = new System.Drawing.Point(25, 340);
+            this.labelCourse.Name = "labelCourse";
+            this.labelCourse.Size = new System.Drawing.Size(482, 36);
+            this.labelCourse.TabIndex = 11;
+            this.labelCourse.Text = "                                ";
+            this.labelCourse.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelSection
+            // 
+            this.labelSection.BackColor = System.Drawing.Color.Transparent;
+            this.labelSection.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSection.ForeColor = System.Drawing.Color.Black;
+            this.labelSection.Location = new System.Drawing.Point(25, 296);
+            this.labelSection.Name = "labelSection";
+            this.labelSection.Size = new System.Drawing.Size(482, 36);
+            this.labelSection.TabIndex = 10;
+            this.labelSection.Text = "               ";
+            this.labelSection.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBoxStudent
+            // 
+            this.pictureBoxStudent.Location = new System.Drawing.Point(195, 14);
+            this.pictureBoxStudent.Name = "pictureBoxStudent";
+            this.pictureBoxStudent.Size = new System.Drawing.Size(157, 181);
+            this.pictureBoxStudent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxStudent.TabIndex = 9;
+            this.pictureBoxStudent.TabStop = false;
+            // 
+            // labelStudentNumber
+            // 
+            this.labelStudentNumber.BackColor = System.Drawing.Color.Transparent;
+            this.labelStudentNumber.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelStudentNumber.ForeColor = System.Drawing.Color.Black;
+            this.labelStudentNumber.Location = new System.Drawing.Point(25, 252);
+            this.labelStudentNumber.Name = "labelStudentNumber";
+            this.labelStudentNumber.Size = new System.Drawing.Size(482, 36);
+            this.labelStudentNumber.TabIndex = 8;
+            this.labelStudentNumber.Text = "               ";
+            this.labelStudentNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelStudentNumber.Click += new System.EventHandler(this.labelStudentNumber_Click);
+            // 
+            // labelStudentName
+            // 
+            this.labelStudentName.BackColor = System.Drawing.Color.Transparent;
+            this.labelStudentName.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelStudentName.ForeColor = System.Drawing.Color.Black;
+            this.labelStudentName.Location = new System.Drawing.Point(25, 208);
+            this.labelStudentName.Name = "labelStudentName";
+            this.labelStudentName.Size = new System.Drawing.Size(482, 36);
+            this.labelStudentName.TabIndex = 7;
+            this.labelStudentName.Text = "                                ";
+            this.labelStudentName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelStudentName.Click += new System.EventHandler(this.labelStudentName_Click);
+            // 
             // ScanScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -335,22 +405,22 @@
             this.Controls.Add(this.panel8);
             this.Name = "ScanScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Scan Form";
+            this.Text = "Scan - Roan University";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStudent)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -362,7 +432,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button Logout;
+        private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel4;
@@ -371,14 +441,19 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnScanCode;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnViewRecord;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button btnBackToDashboard;
+        private System.Windows.Forms.Label labelScanStatus;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label labelCourse;
+        private System.Windows.Forms.Label labelSection;
+        private System.Windows.Forms.PictureBox pictureBoxStudent;
+        private System.Windows.Forms.Label labelStudentNumber;
+        private System.Windows.Forms.Label labelStudentName;
     }
 }
 

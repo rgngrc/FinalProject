@@ -28,9 +28,16 @@ namespace FinalProject
 
         private void btnViewScanHistory_Click(object sender, EventArgs e)
         {
-           //ScanHistoryFrame scanHis = new ScanHistoryFrame();
-           //scanHis.Show();
-           //this.Close();
+           HistoryScreen history = new HistoryScreen();
+           history.Show();
+           this.Close();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            LoginScreen login = new LoginScreen();
+            login.Show();
+            this.Close();
         }
     }
 }

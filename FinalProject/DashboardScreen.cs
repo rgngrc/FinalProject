@@ -64,7 +64,23 @@ namespace FinalProject
 
         private void btnScanHistory_Click(object sender, EventArgs e)
         {
+            HistoryScreen history = new HistoryScreen();
+            history.Show();
+            this.Hide();
+        }
 
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            SettingsScreen settings = new SettingsScreen();
+            settings.Show();
+            this.Hide();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            LoginScreen login = new LoginScreen();
+            login.Show();
+            this.Close();
         }
     }
 }

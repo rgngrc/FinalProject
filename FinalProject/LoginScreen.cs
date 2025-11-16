@@ -55,5 +55,10 @@ namespace FinalProject
             dashboard.Show();
             this.Hide();
         }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

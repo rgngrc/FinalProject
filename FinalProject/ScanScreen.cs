@@ -14,13 +14,23 @@ namespace FinalProject
 {
     public partial class ScanScreen : Form
     {
-       
+
         FilterInfoCollection webcams;
         VideoCaptureDevice cam;
 
         public ScanScreen()
         {
             InitializeComponent();
+        }
+
+        private void StopCamera()
+        {
+            if (cam != null && cam.IsRunning)
+            {
+                cam.SignalToStop();
+                cam.WaitForStop();
+                cam = null;
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -37,7 +47,7 @@ namespace FinalProject
             {
                 MessageBox.Show("No camera detected.");
             }
-            
+
             comboBox1.Items.Add("QR Code");
             comboBox1.Items.Add("Barcode");
             comboBox1.Items.Add("RFID");
@@ -45,7 +55,7 @@ namespace FinalProject
             comboBox1.SelectedIndex = 0;
         }
 
-       
+
         private void Cam_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
             pictureBox1.Image = (Bitmap)eventArgs.Frame.Clone();
@@ -53,27 +63,12 @@ namespace FinalProject
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
-            if (cam != null && cam.IsRunning)
-            {
-                cam.SignalToStop();
-                cam = null;
-            }
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-
+            StopCamera();
         }
 
         private void btnViewRecord_Click(object sender, EventArgs e)
         {
+            StopCamera(); 
             StudentRecordFrame studentRecord = new StudentRecordFrame();
             studentRecord.Show();
             this.Close();
@@ -81,10 +76,50 @@ namespace FinalProject
 
         private void btnBackToDashboard_Click(object sender, EventArgs e)
         {
+            StopCamera();
             DashboardScreen dashboard = new DashboardScreen();
             dashboard.Show();
             this.Close();
         }
-    }
-    }
 
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            StopCamera();
+            LoginScreen login = new LoginScreen();
+            login.Show();
+            this.Close();
+        }
+
+        private void btnScanCode_Click(object sender, EventArgs e)
+        {
+            string scanType = comboBox1.SelectedItem.ToString();
+
+            labelScanStatus.Text = $"Successfully scanned {scanType}!";
+
+            labelStudentName.Text = "Jasper Cedrick Nolo Asi";
+            labelStudentNumber.Text = "2300374";
+            labelCourse.Text = "Bachelor of Science in information Technology";
+            labelSection.Text = "3 IT-A";
+
+            try
+            {
+                // Loading image from embedded resources
+                pictureBoxStudent.Image = Properties.Resources.idpic;
+            }
+            catch
+            {
+                pictureBoxStudent.Image = null;
+            }
+        }
+
+        private void labelStudentNumber_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelStudentName_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
