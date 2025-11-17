@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FinalProject
 {
@@ -22,7 +23,7 @@ namespace FinalProject
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-
+            cmbType.SelectedIndex = 0;
         }
 
         private void lblRecentScans_Click(object sender, EventArgs e)

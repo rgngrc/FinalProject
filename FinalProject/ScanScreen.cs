@@ -48,8 +48,8 @@ namespace FinalProject
                 MessageBox.Show("No camera detected.");
             }
 
-            comboBox1.Items.Add("QR Code");
             comboBox1.Items.Add("Barcode");
+            comboBox1.Items.Add("QR Code");
             comboBox1.Items.Add("RFID");
 
             comboBox1.SelectedIndex = 0;

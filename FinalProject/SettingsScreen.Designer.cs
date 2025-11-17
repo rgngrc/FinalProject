@@ -30,8 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsScreen));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Load += new System.EventHandler(this.SettingsScreen_Load);
             this.label3 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.cmbDefaultType = new System.Windows.Forms.ComboBox();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -39,7 +42,6 @@
             this.btnSettings = new System.Windows.Forms.Button();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -53,7 +55,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblStatus = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -86,6 +87,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.Controls.Add(this.cmbDefaultType);
             this.panel5.Controls.Add(this.lblStatus);
             this.panel5.Controls.Add(this.button1);
             this.panel5.Controls.Add(this.checkBox2);
@@ -94,7 +96,6 @@
             this.panel5.Controls.Add(this.btnSettings);
             this.panel5.Controls.Add(this.radioButton2);
             this.panel5.Controls.Add(this.radioButton1);
-            this.panel5.Controls.Add(this.comboBox1);
             this.panel5.Controls.Add(this.label8);
             this.panel5.Controls.Add(this.label7);
             this.panel5.Controls.Add(this.label6);
@@ -104,6 +105,36 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1624, 673);
             this.panel5.TabIndex = 7;
+            // 
+            // cmbDefaultType
+            // 
+            this.cmbDefaultType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDefaultType.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbDefaultType.FormattingEnabled = true;
+            this.cmbDefaultType.Items.AddRange(new object[] {
+            "Barcode",
+            "QR Code",
+            "RFID"});
+            this.cmbDefaultType.Location = new System.Drawing.Point(581, 56);
+            this.cmbDefaultType.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbDefaultType.Name = "cmbDefaultType";
+            this.cmbDefaultType.Size = new System.Drawing.Size(245, 45);
+            this.cmbDefaultType.TabIndex = 28;
+            this.cmbDefaultType.SelectedIndexChanged += new System.EventHandler(this.cmbDefaultType_SelectedIndexChanged);
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.BackColor = System.Drawing.Color.LimeGreen;
+            this.lblStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblStatus.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.ForeColor = System.Drawing.Color.White;
+            this.lblStatus.Location = new System.Drawing.Point(580, 158);
+            this.lblStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(120, 36);
+            this.lblStatus.TabIndex = 27;
+            this.lblStatus.Text = "Connected";
+            this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button1
             // 
@@ -192,19 +223,6 @@
             this.radioButton1.Text = "Continuous Scan";
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownWidth = 200;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.ItemHeight = 25;
-            this.comboBox1.Location = new System.Drawing.Point(584, 59);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(297, 33);
-            this.comboBox1.TabIndex = 11;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -310,7 +328,7 @@
             this.btnLogout.TabIndex = 2;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click_1);
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // panel3
             // 
@@ -364,20 +382,6 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Settings";
             // 
-            // lblStatus
-            // 
-            this.lblStatus.BackColor = System.Drawing.Color.LimeGreen;
-            this.lblStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblStatus.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.ForeColor = System.Drawing.Color.White;
-            this.lblStatus.Location = new System.Drawing.Point(580, 158);
-            this.lblStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(120, 36);
-            this.lblStatus.TabIndex = 27;
-            this.lblStatus.Text = "Connected";
-            this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // SettingsScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -411,7 +415,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Button btnSettings;
@@ -429,6 +432,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.ComboBox cmbDefaultType;
     }
 }
 
