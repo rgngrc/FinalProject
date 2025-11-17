@@ -17,6 +17,15 @@ namespace FinalProject
             InitializeComponent();
         }
 
+        private void SettingsScreen_Load(object sender, EventArgs e)
+        {
+            comboBox1.Items.Add("QR Code");
+            comboBox1.Items.Add("Barcode");
+            comboBox1.Items.Add("RFID");
+
+            comboBox1.SelectedIndex = 0;
+        }
+
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -85,6 +94,18 @@ namespace FinalProject
         {
             DashboardScreen dashboardScreen = new DashboardScreen();
             dashboardScreen.Show();
+            this.Close();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogout_Click_1(object sender, EventArgs e)
+        {
+            LoginScreen login = new LoginScreen();
+            login.Show();
             this.Close();
         }
     }

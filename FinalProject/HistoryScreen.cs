@@ -82,5 +82,10 @@ namespace FinalProject
             dashboardScreen.Show();
             this.Close();
         }
+
+        private void lblDateTime_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

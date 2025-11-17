@@ -40,23 +40,23 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnScanCode = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.labelScanStatus = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.btnViewRecord = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.labelScanStatus = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.labelCourse = new System.Windows.Forms.Label();
-            this.labelSection = new System.Windows.Forms.Label();
             this.pictureBoxStudent = new System.Windows.Forms.PictureBox();
+            this.labelSection = new System.Windows.Forms.Label();
             this.labelStudentNumber = new System.Windows.Forms.Label();
             this.labelStudentName = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -65,8 +65,8 @@
             this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
-            this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStudent)).BeginInit();
+            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -198,6 +198,16 @@
             this.panel4.Size = new System.Drawing.Size(613, 479);
             this.panel4.TabIndex = 4;
             // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.White;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(37, 424);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(378, 36);
+            this.textBox1.TabIndex = 9;
+            // 
             // btnScanCode
             // 
             this.btnScanCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(184)))), ((int)(((byte)(67)))));
@@ -245,6 +255,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(243, 36);
             this.comboBox1.TabIndex = 0;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // panel6
             // 
@@ -255,6 +266,17 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(613, 81);
             this.panel6.TabIndex = 5;
+            // 
+            // labelScanStatus
+            // 
+            this.labelScanStatus.Font = new System.Drawing.Font("Cambria", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelScanStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(184)))), ((int)(((byte)(67)))));
+            this.labelScanStatus.Location = new System.Drawing.Point(87, 23);
+            this.labelScanStatus.Name = "labelScanStatus";
+            this.labelScanStatus.Size = new System.Drawing.Size(428, 33);
+            this.labelScanStatus.TabIndex = 1;
+            this.labelScanStatus.Text = "                                            ";
+            this.labelScanStatus.Click += new System.EventHandler(this.labelScanStatus_Click);
             // 
             // panel8
             // 
@@ -293,46 +315,6 @@
             this.panel7.Size = new System.Drawing.Size(528, 390);
             this.panel7.TabIndex = 8;
             // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(80)))));
-            this.panel9.Controls.Add(this.label7);
-            this.panel9.Location = new System.Drawing.Point(847, 119);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(613, 62);
-            this.panel9.TabIndex = 7;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Cambria", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(235, 19);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(149, 26);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Scanned Data";
-            // 
-            // labelScanStatus
-            // 
-            this.labelScanStatus.Font = new System.Drawing.Font("Cambria", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelScanStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(184)))), ((int)(((byte)(67)))));
-            this.labelScanStatus.Location = new System.Drawing.Point(87, 23);
-            this.labelScanStatus.Name = "labelScanStatus";
-            this.labelScanStatus.Size = new System.Drawing.Size(428, 33);
-            this.labelScanStatus.TabIndex = 1;
-            this.labelScanStatus.Text = "                                            ";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(37, 424);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(378, 36);
-            this.textBox1.TabIndex = 9;
-            // 
             // labelCourse
             // 
             this.labelCourse.BackColor = System.Drawing.Color.Transparent;
@@ -345,6 +327,15 @@
             this.labelCourse.Text = "                                ";
             this.labelCourse.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pictureBoxStudent
+            // 
+            this.pictureBoxStudent.Location = new System.Drawing.Point(195, 14);
+            this.pictureBoxStudent.Name = "pictureBoxStudent";
+            this.pictureBoxStudent.Size = new System.Drawing.Size(157, 181);
+            this.pictureBoxStudent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxStudent.TabIndex = 9;
+            this.pictureBoxStudent.TabStop = false;
+            // 
             // labelSection
             // 
             this.labelSection.BackColor = System.Drawing.Color.Transparent;
@@ -356,15 +347,6 @@
             this.labelSection.TabIndex = 10;
             this.labelSection.Text = "               ";
             this.labelSection.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBoxStudent
-            // 
-            this.pictureBoxStudent.Location = new System.Drawing.Point(195, 14);
-            this.pictureBoxStudent.Name = "pictureBoxStudent";
-            this.pictureBoxStudent.Size = new System.Drawing.Size(157, 181);
-            this.pictureBoxStudent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxStudent.TabIndex = 9;
-            this.pictureBoxStudent.TabStop = false;
             // 
             // labelStudentNumber
             // 
@@ -392,6 +374,26 @@
             this.labelStudentName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelStudentName.Click += new System.EventHandler(this.labelStudentName_Click);
             // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(80)))));
+            this.panel9.Controls.Add(this.label7);
+            this.panel9.Location = new System.Drawing.Point(847, 119);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(613, 62);
+            this.panel9.TabIndex = 7;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Cambria", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(235, 19);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(149, 26);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Scanned Data";
+            // 
             // ScanScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -418,9 +420,9 @@
             this.panel6.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStudent)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStudent)).EndInit();
             this.ResumeLayout(false);
 
         }

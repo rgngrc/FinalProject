@@ -82,5 +82,15 @@ namespace FinalProject
             login.Show();
             this.Close();
         }
+
+        private void lblStudentId_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

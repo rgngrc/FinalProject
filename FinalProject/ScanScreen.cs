@@ -121,5 +121,15 @@ namespace FinalProject
         {
 
         }
+
+        private void labelScanStatus_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
