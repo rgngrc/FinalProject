@@ -80,5 +80,12 @@ namespace FinalProject
             login.Show();
             this.Close();
         }
+
+        private void btnBackToDash_Click(object sender, EventArgs e)
+        {
+            DashboardScreen dashboardScreen = new DashboardScreen();
+            dashboardScreen.Show();
+            this.Close();
+        }
     }
 }
