@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardScreen));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -56,7 +56,17 @@
             this.lblWeekNum = new System.Windows.Forms.Label();
             this.lblThisWeek = new System.Windows.Forms.Label();
             this.panelRecentScans = new System.Windows.Forms.Panel();
+            this.lblResult = new System.Windows.Forms.Label();
+            this.lblScanType = new System.Windows.Forms.Label();
+            this.lblStudentName = new System.Windows.Forms.Label();
+            this.lblStudentId = new System.Windows.Forms.Label();
+            this.lblDateTime = new System.Windows.Forms.Label();
             this.dgvRecentScans = new System.Windows.Forms.DataGridView();
+            this.colDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStudId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStudentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colScanType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colResult = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnScan = new System.Windows.Forms.Button();
             this.btnScanHistory = new System.Windows.Forms.Button();
             this.btnSettings = new System.Windows.Forms.Button();
@@ -68,16 +78,6 @@
             this.ScanType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblRecentScans = new System.Windows.Forms.Label();
-            this.lblDateTime = new System.Windows.Forms.Label();
-            this.lblStudentId = new System.Windows.Forms.Label();
-            this.lblStudentName = new System.Windows.Forms.Label();
-            this.lblScanType = new System.Windows.Forms.Label();
-            this.lblResult = new System.Windows.Forms.Label();
-            this.colDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStudId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStudentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colScanType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colResult = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelScannerStatus.SuspendLayout();
@@ -400,6 +400,67 @@
             this.panelRecentScans.TabIndex = 3;
             this.panelRecentScans.Paint += new System.Windows.Forms.PaintEventHandler(this.panelRecentScans_Paint);
             // 
+            // lblResult
+            // 
+            this.lblResult.BackColor = System.Drawing.Color.Transparent;
+            this.lblResult.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResult.ForeColor = System.Drawing.Color.Black;
+            this.lblResult.Location = new System.Drawing.Point(1542, 51);
+            this.lblResult.Name = "lblResult";
+            this.lblResult.Size = new System.Drawing.Size(220, 26);
+            this.lblResult.TabIndex = 5;
+            this.lblResult.Text = "Success";
+            this.lblResult.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblScanType
+            // 
+            this.lblScanType.BackColor = System.Drawing.Color.Transparent;
+            this.lblScanType.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblScanType.ForeColor = System.Drawing.Color.Black;
+            this.lblScanType.Location = new System.Drawing.Point(1173, 51);
+            this.lblScanType.Name = "lblScanType";
+            this.lblScanType.Size = new System.Drawing.Size(220, 26);
+            this.lblScanType.TabIndex = 4;
+            this.lblScanType.Text = "Barcode";
+            this.lblScanType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblStudentName
+            // 
+            this.lblStudentName.BackColor = System.Drawing.Color.Transparent;
+            this.lblStudentName.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStudentName.ForeColor = System.Drawing.Color.Black;
+            this.lblStudentName.Location = new System.Drawing.Point(806, 51);
+            this.lblStudentName.Name = "lblStudentName";
+            this.lblStudentName.Size = new System.Drawing.Size(220, 26);
+            this.lblStudentName.TabIndex = 3;
+            this.lblStudentName.Text = "John Dela Cruz";
+            this.lblStudentName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblStudentId
+            // 
+            this.lblStudentId.BackColor = System.Drawing.Color.Transparent;
+            this.lblStudentId.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStudentId.ForeColor = System.Drawing.Color.Black;
+            this.lblStudentId.Location = new System.Drawing.Point(436, 51);
+            this.lblStudentId.Name = "lblStudentId";
+            this.lblStudentId.Size = new System.Drawing.Size(176, 26);
+            this.lblStudentId.TabIndex = 2;
+            this.lblStudentId.Text = "2310045";
+            this.lblStudentId.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblStudentId.Click += new System.EventHandler(this.lblStudentId_Click);
+            // 
+            // lblDateTime
+            // 
+            this.lblDateTime.BackColor = System.Drawing.Color.Transparent;
+            this.lblDateTime.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateTime.ForeColor = System.Drawing.Color.Black;
+            this.lblDateTime.Location = new System.Drawing.Point(71, 51);
+            this.lblDateTime.Name = "lblDateTime";
+            this.lblDateTime.Size = new System.Drawing.Size(260, 26);
+            this.lblDateTime.TabIndex = 1;
+            this.lblDateTime.Text = "2025-11-12 09:45 AM";
+            this.lblDateTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // dgvRecentScans
             // 
             this.dgvRecentScans.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -407,14 +468,14 @@
             this.dgvRecentScans.BackgroundColor = System.Drawing.Color.White;
             this.dgvRecentScans.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvRecentScans.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRecentScans.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRecentScans.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvRecentScans.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRecentScans.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colDateTime,
@@ -422,29 +483,64 @@
             this.colStudentName,
             this.colScanType,
             this.colResult});
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRecentScans.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRecentScans.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvRecentScans.Location = new System.Drawing.Point(4, 11);
             this.dgvRecentScans.Margin = new System.Windows.Forms.Padding(4);
             this.dgvRecentScans.Name = "dgvRecentScans";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRecentScans.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRecentScans.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvRecentScans.RowHeadersWidth = 51;
             this.dgvRecentScans.Size = new System.Drawing.Size(1899, 241);
             this.dgvRecentScans.TabIndex = 0;
             this.dgvRecentScans.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRecentScans_CellContentClick);
+            // 
+            // colDateTime
+            // 
+            this.colDateTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colDateTime.HeaderText = "Date / Time";
+            this.colDateTime.MinimumWidth = 6;
+            this.colDateTime.Name = "colDateTime";
+            // 
+            // colStudId
+            // 
+            this.colStudId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colStudId.HeaderText = "Student ID";
+            this.colStudId.MinimumWidth = 6;
+            this.colStudId.Name = "colStudId";
+            // 
+            // colStudentName
+            // 
+            this.colStudentName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colStudentName.HeaderText = "Student Name";
+            this.colStudentName.MinimumWidth = 6;
+            this.colStudentName.Name = "colStudentName";
+            // 
+            // colScanType
+            // 
+            this.colScanType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colScanType.HeaderText = "Scan Type";
+            this.colScanType.MinimumWidth = 6;
+            this.colScanType.Name = "colScanType";
+            // 
+            // colResult
+            // 
+            this.colResult.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colResult.HeaderText = "Result";
+            this.colResult.MinimumWidth = 6;
+            this.colResult.Name = "colResult";
             // 
             // btnScan
             // 
@@ -563,102 +659,6 @@
             this.lblRecentScans.TabIndex = 0;
             this.lblRecentScans.Text = "Recent Scans";
             this.lblRecentScans.Click += new System.EventHandler(this.lblRecentScans_Click);
-            // 
-            // lblDateTime
-            // 
-            this.lblDateTime.BackColor = System.Drawing.Color.Transparent;
-            this.lblDateTime.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateTime.ForeColor = System.Drawing.Color.Black;
-            this.lblDateTime.Location = new System.Drawing.Point(71, 51);
-            this.lblDateTime.Name = "lblDateTime";
-            this.lblDateTime.Size = new System.Drawing.Size(176, 26);
-            this.lblDateTime.TabIndex = 1;
-            this.lblDateTime.Text = "2025-11-12 09:45 AM";
-            this.lblDateTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblStudentId
-            // 
-            this.lblStudentId.BackColor = System.Drawing.Color.Transparent;
-            this.lblStudentId.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStudentId.ForeColor = System.Drawing.Color.Black;
-            this.lblStudentId.Location = new System.Drawing.Point(436, 51);
-            this.lblStudentId.Name = "lblStudentId";
-            this.lblStudentId.Size = new System.Drawing.Size(176, 26);
-            this.lblStudentId.TabIndex = 2;
-            this.lblStudentId.Text = "2310045";
-            this.lblStudentId.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblStudentId.Click += new System.EventHandler(this.lblStudentId_Click);
-            // 
-            // lblStudentName
-            // 
-            this.lblStudentName.BackColor = System.Drawing.Color.Transparent;
-            this.lblStudentName.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStudentName.ForeColor = System.Drawing.Color.Black;
-            this.lblStudentName.Location = new System.Drawing.Point(806, 51);
-            this.lblStudentName.Name = "lblStudentName";
-            this.lblStudentName.Size = new System.Drawing.Size(220, 26);
-            this.lblStudentName.TabIndex = 3;
-            this.lblStudentName.Text = "John Dela Cruz";
-            this.lblStudentName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblScanType
-            // 
-            this.lblScanType.BackColor = System.Drawing.Color.Transparent;
-            this.lblScanType.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblScanType.ForeColor = System.Drawing.Color.Black;
-            this.lblScanType.Location = new System.Drawing.Point(1173, 51);
-            this.lblScanType.Name = "lblScanType";
-            this.lblScanType.Size = new System.Drawing.Size(220, 26);
-            this.lblScanType.TabIndex = 4;
-            this.lblScanType.Text = "Barcode";
-            this.lblScanType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblResult
-            // 
-            this.lblResult.BackColor = System.Drawing.Color.Transparent;
-            this.lblResult.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResult.ForeColor = System.Drawing.Color.Black;
-            this.lblResult.Location = new System.Drawing.Point(1542, 51);
-            this.lblResult.Name = "lblResult";
-            this.lblResult.Size = new System.Drawing.Size(220, 26);
-            this.lblResult.TabIndex = 5;
-            this.lblResult.Text = "Success";
-            this.lblResult.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // colDateTime
-            // 
-            this.colDateTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colDateTime.HeaderText = "Date / Time";
-            this.colDateTime.MinimumWidth = 6;
-            this.colDateTime.Name = "colDateTime";
-            // 
-            // colStudId
-            // 
-            this.colStudId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colStudId.HeaderText = "Student ID";
-            this.colStudId.MinimumWidth = 6;
-            this.colStudId.Name = "colStudId";
-            // 
-            // colStudentName
-            // 
-            this.colStudentName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colStudentName.HeaderText = "Student Name";
-            this.colStudentName.MinimumWidth = 6;
-            this.colStudentName.Name = "colStudentName";
-            // 
-            // colScanType
-            // 
-            this.colScanType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colScanType.HeaderText = "Scan Type";
-            this.colScanType.MinimumWidth = 6;
-            this.colScanType.Name = "colScanType";
-            // 
-            // colResult
-            // 
-            this.colResult.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colResult.HeaderText = "Result";
-            this.colResult.MinimumWidth = 6;
-            this.colResult.Name = "colResult";
             // 
             // DashboardScreen
             // 

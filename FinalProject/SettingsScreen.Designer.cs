@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsScreen));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Load += new System.EventHandler(this.SettingsScreen_Load);
             this.label3 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.cmbDefaultType = new System.Windows.Forms.ComboBox();
@@ -394,8 +393,9 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SettingsScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Settings";
+            this.Text = "Settings - Roan University";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.SettingsScreen_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel5.ResumeLayout(false);
